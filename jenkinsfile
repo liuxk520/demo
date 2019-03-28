@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('build') {
-            mvn package
+           echo "build ..."
         }
         stage('test') {
             echo "test...."
