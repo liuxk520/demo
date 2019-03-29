@@ -6,6 +6,7 @@ pipeline {
 		stage('Build'){
 			steps {
 				echo 'Build ...'
+				sh 'mvn install -Dmaven.test.skip=true'
 				echo "${env.WORKSPACE}/target/*.jar"
 			}
 		}
@@ -17,6 +18,7 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo 'Deploying...'
+				sh 'java -jar ${env.WORKSPACE}/target/*.jar'
 			}
 		}
 	
