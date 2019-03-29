@@ -18,10 +18,7 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo 'Deploying...'
-				sh "cd ${env.WORKSPACE}/target/"
-				sh 'pwd'
-				sh "ls"
-				sh "java -jar demo-0.0.1-SNAPSHOT.jar"
+				sh "java -jar ${env.WORKSPACE}/target/demo-0.0.1-SNAPSHOT.jar"
 			}
 		}
 	
