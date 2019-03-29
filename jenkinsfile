@@ -1,7 +1,4 @@
-println env
-println env.JOB_NAME
-println env.BUILD_NUMBER
-println env.WORKSPACE
+
 pipeline {
 	agent any
 	
@@ -9,7 +6,7 @@ pipeline {
 		stage('Build'){
 			steps {
 				echo 'Build ...'
-				echo "${env.WORKSPACE}"
+				echo "${env.WORKSPACE}/target/*.jar"
 			}
 		}
 		stage('Test') {
