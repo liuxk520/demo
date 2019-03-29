@@ -1,5 +1,5 @@
 println env
-println env.JOB_HOME
+println env.JOB_NAME
 println env.BUILD_NUMBER
 println env.WORKSPACE
 pipeline {
