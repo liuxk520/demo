@@ -7,7 +7,7 @@ pipeline {
 			steps {
 				echo 'Build ...'
 				sh 'mvn install -Dmaven.test.skip=true'
-				echo "ls ${env.WORKSPACE}/target/*.jar"
+				sh "ls ${env.WORKSPACE}/target/*.jar"
 			}
 		}
 		stage('Test') {
