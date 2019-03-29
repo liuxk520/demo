@@ -1,10 +1,14 @@
+println env
+println env.JOB_HOME
+println env.BUILD_NUMBER
+println env.WORKSPACE
 pipeline {
 	agent any
 	
 	stages {
 		stage('Build'){
 			steps {
-				sh 'mvn package'
+				echo 'Build ...'
 			}
 		}
 		stage('Test') {
