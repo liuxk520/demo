@@ -1,12 +1,16 @@
 
 pipeline {
 	agent any
-	
+	// 定义仓库地址
+	environment {
+	    REPOSITORY=""
+	}
 	stages {
 		stage('Build'){
 			steps {
 				echo 'Build ...'
-				sh 'mvn package docker:build'
+				// sh 'mvn package docker:build'
+				sh "mvn install -Dmaven.test.skip=true"
 			}
 		}
 		stage('Test') {
@@ -17,7 +21,10 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo 'Deploying...'
-				sh " docker run -p 9999:9999 -t --name=demo springboot/demo"
+				sh "pwd"
+				println ${WORKSPACE}
+				println ${JENKINS_HOME}
+				// sh " docker run -p 9999:9999 -it -d --name=demo springboot/demo"
 			}
 		}
 	
