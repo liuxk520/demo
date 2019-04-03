@@ -24,6 +24,12 @@ pipeline {
 				sh "pwd"
 				println "${WORKSPACE}"
 				println "${JENKINS_HOME}"
+				sh "mv target/*.jar src/main/docker"
+				dir('src/main/docker') {
+                    sh "pwd"
+                    sh "ls"
+                    // sh "docker build -t demo:v1.0 ."
+                }
 				// sh " docker run -p 9999:9999 -it -d --name=demo springboot/demo"
 			}
 		}
