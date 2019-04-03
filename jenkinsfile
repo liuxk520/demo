@@ -40,8 +40,8 @@ pipeline {
                     echo "JENKINS_HOME ---- ${JENKINS_HOME}"
                     echo "JENKINS_URL ---- ${JENKINS_URL}"
                     echo "BUILD_URL ---- ${BUILD_URL}"
-                    echo "SVN_REVISION ---- ${SVN_REVISION}"
-                    echo "SVN_URL ---- ${SVN_URL}"
+                   // echo "SVN_REVISION ---- ${SVN_REVISION}"
+                    //echo "SVN_URL ---- ${SVN_URL}"
                     echo "JOB_URL ---- ${JOB_URL}"
 
 
