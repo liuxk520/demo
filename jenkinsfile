@@ -22,8 +22,8 @@ pipeline {
 			steps {
 				echo 'Deploying...'
 				sh "pwd"
-				println ${WORKSPACE}
-				println ${JENKINS_HOME}
+				println "${WORKSPACE}"
+				println "${JENKINS_HOME}"
 				// sh " docker run -p 9999:9999 -it -d --name=demo springboot/demo"
 			}
 		}
