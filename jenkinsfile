@@ -28,6 +28,7 @@ pipeline {
 				dir('src/main/docker') {
                     sh "pwd"
                     sh "ls"
+                    echo "${BUILD_NUMBER}"
                     // sh "docker build -t demo:v1.0 ."
                 }
 				// sh " docker run -p 9999:9999 -it -d --name=demo springboot/demo"
