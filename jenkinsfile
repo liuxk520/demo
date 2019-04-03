@@ -36,6 +36,14 @@ pipeline {
                     echo "EXECUTOR_NUMBER ---- ${EXECUTOR_NUMBER}"
                     echo "NODE_NAME ---- ${NODE_NAME}"
                     echo "NODE_LABELS ---- ${NODE_LABELS}"
+                    echo "WORKSPACE ---- ${WORKSPACE}"
+                    echo "JENKINS_HOME ---- ${JENKINS_HOME}"
+                    echo "JENKINS_URL ---- ${JENKINS_URL}"
+                    echo "BUILD_URL ---- ${BUILD_URL}"
+                    echo "SVN_REVISION ---- ${SVN_REVISION}"
+                    echo "SVN_URL ---- ${SVN_URL}"
+                    echo "JOB_URL ---- ${JOB_URL}"
+
 
                     sh "docker build -t demo:${BUILD_NUMBER} ."
                 }
