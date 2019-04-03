@@ -24,7 +24,7 @@ pipeline {
 				sh "pwd"
 				println "${WORKSPACE}"
 				println "${JENKINS_HOME}"
-				sh "rm target/*.jar src/main/docker"
+				sh "cp -f target/*.jar src/main/docker"
 				dir('src/main/docker') {
                     sh "pwd"
                     sh "ls"
