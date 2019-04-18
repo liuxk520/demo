@@ -57,7 +57,9 @@ pipeline {
 		}
 		
 		stage('Deploy') {
-			echo "拉取私有仓库的镜像"
+			steps {
+				echo "拉取私有仓库的镜像"
+			}
 		}
 	
 	}
