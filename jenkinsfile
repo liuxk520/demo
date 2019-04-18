@@ -18,7 +18,7 @@ pipeline {
 				echo 'Testing...'
 			}
 		}
-		stage('Deploy') {
+		stage('Docker Build') {
 			steps {
 				echo 'Deploying...'
 				sh "pwd"
@@ -48,11 +48,16 @@ pipeline {
                     sh "docker build -t demo:${BUILD_NUMBER} ."
 		    
 		    // 推送到私有仓库
-		    
+		    sh "docker tag demo:${BUILD_NUMBER}  127.0.0.1:5000/demo:${BUILD_NUMBER}"
+		    sh "docker push 127.0.0.1:5000/demo:${BUILD_NUMBER}"
 		   
                 }
 				// sh " docker run -p 9999:9999 -it -d --name=demo springboot/demo"
 			}
+		}
+		
+		stage('Deploy') {
+			echo "拉取私有仓库的镜像"
 		}
 	
 	}
